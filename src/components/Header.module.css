@@ -1,0 +1,44 @@
+.header {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 8.3571428571rem;
+  font-family: Helvetica;
+}
+
+.logo {
+  color: inherit;
+  width: 235.953px;
+}
+
+.nav {
+  margin-top: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+}
+
+.a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 100%;
+}
+
+.a:hover {
+  color: #006491;
+}
+
+.ul li:nth-child(2) a::before {
+  content: "|";
+  color: #fff;
+  margin: 0 0.5714285714rem;
+}
