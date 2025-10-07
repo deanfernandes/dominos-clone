@@ -17,7 +17,7 @@
 }
 
 .collection_container {
-  color: #fff;
+  color: var(--primary-white);
 }
 
 .collection_link {
@@ -38,7 +38,7 @@
 .collection_icon {
   min-height: 1.7142857143rem;
   min-width: 1.7142857143rem;
-  fill: #fff;
+  fill: var(--primary-white);
 }
 
 .collection_location {
@@ -65,12 +65,9 @@
   min-width: 10.7142857143rem;
 }
 
-.menu_links_container a:hover {
-  color: #e31837;
-}
-
+.menu_links_container a:hover,
 .menu_links_container a:active {
-  color: #e31837;
+  color: var(--text-secondary-red);
 }
 
 .menu_link_underline {
@@ -92,7 +89,7 @@
 }
 
 .basket_container {
-  color: #fff;
+  color: var(--primary-white);
 }
 
 .basket_container a {
@@ -112,7 +109,7 @@
 }
 
 .basket_container a span svg {
-  fill: #fff;
+  fill: var(--primary-white);
 }
 
 .basket_amount {

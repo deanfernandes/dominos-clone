@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--primary-white);
 }
 
 .logo {
@@ -39,6 +39,6 @@
 
 .links li:nth-child(2) a::before {
   content: "|";
-  color: #fff;
+  color: var(--primary-white);
   margin: 0 0.5714285714rem;
 }

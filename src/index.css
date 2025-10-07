@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary-white: #fff;
+  --text-secondary-red: #e31837;
+}
