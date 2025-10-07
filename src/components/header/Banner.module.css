@@ -1,0 +1,44 @@
+.container {
+  height: 8.3571428571rem;
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.logo {
+  color: inherit;
+  width: 235.953px;
+}
+
+.links_container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 2rem;
+  margin-right: 1.7142857143rem;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+}
+
+.links li a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 100%;
+}
+
+.links li a:hover {
+  color: #006491;
+}
+
+.links li:nth-child(2) a::before {
+  content: "|";
+  color: #fff;
+  margin: 0 0.5714285714rem;
+}
