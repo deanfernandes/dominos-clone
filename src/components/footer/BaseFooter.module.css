@@ -1,0 +1,13 @@
+.base_footer_container {
+  display: flex;
+  background-color: #006491;
+  text-transform: uppercase;
+  color: var(--primary-white);
+  font-family: "Dominos primary", "Impact", "Arial Narrow", Helvetica, Arial,
+    sans-serif;
+}
+
+.base_footer_container div a {
+  text-decoration: none;
+  color: inherit;
+}
