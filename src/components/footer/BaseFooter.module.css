@@ -9,7 +9,9 @@
   padding: 0 0 3.4285714286rem;
 }
 
-.base_footer_container > nav {
+.base_footer_container .about_dominos_container,
+.base_footer_container .corporate_container,
+.base_footer_container .follow_us_container {
   display: flex;
   flex-direction: column;
 }
@@ -43,6 +45,57 @@
   height: 2.5714285714rem;
 }
 
-.logo {
-  fill: red;
+.about_dominos_container_mobile,
+.corporate_container_mobile {
+  border-bottom: 0.1428571429rem solid var(--primary-white);
+}
+
+.about_dominos_container_mobile,
+.about_dominos_links_container_mobile,
+.corporate_container_mobile,
+.corporate_links_container_mobile {
+  display: none;
+  flex-direction: column;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.follow_us_container_mobile {
+  display: none;
+  justify-content: center;
+  text-transform: none;
+  font-weight: bold;
+  margin: 2.8571428571rem 0;
+}
+
+.about_dominos_header,
+.corporate_header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.follow_us_wrapper_mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .base_footer_container {
+    flex-direction: column;
+  }
+
+  .base_footer_container .about_dominos_container,
+  .base_footer_container .corporate_container,
+  .base_footer_container .follow_us_container {
+    display: none;
+  }
+
+  .about_dominos_container_mobile,
+  .about_dominos_links_container_mobile,
+  .corporate_container_mobile,
+  .corporate_links_container_mobile,
+  .follow_us_container_mobile {
+    display: flex;
+  }
 }
