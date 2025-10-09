@@ -2,6 +2,9 @@
   max-width: 1248px;
   margin: 0 auto;
   font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
+  color: #393336;
+  border-bottom: 0.0714285714rem solid var(--border-default);
+  padding: 1.1428571429rem;
 }
 
 .allergy_content_btn {
@@ -14,12 +17,14 @@
 .allergy_content_btn span {
   display: flex;
   align-items: center;
+  column-gap: 0.5714285714rem;
   font-weight: bold;
 }
 
 .allergy_content_btn svg {
   height: 1.7142857143rem;
   width: 1.7142857143rem;
+  fill: #005277;
 }
 
 .chevron {
@@ -32,6 +37,7 @@
 
 .content {
   transition: max-height 0.7s ease-in-out;
+  /*padding: 1.1428571429rem;*/
   max-height: 0;
   overflow: hidden;
 }
