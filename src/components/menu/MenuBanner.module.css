@@ -13,6 +13,7 @@
   padding: 0.5714285714rem;
 }
 
-.banner_link {
+.banner_link,
+.banner_link img {
   width: 100%;
 }
