@@ -1,0 +1,18 @@
+.menu_banner_container {
+  max-width: 1248px;
+  margin: 0 auto;
+  box-shadow: 0 4px 5px 0 rgba(57, 51, 54, 0.14),
+    0 1px 10px 0 rgba(57, 51, 54, 0.12), 0 2px 4px -1px rgba(57, 51, 54, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommendation {
+  color: #545454;
+  padding: 0.5714285714rem;
+}
+
+.banner_link {
+  width: 100%;
+}
