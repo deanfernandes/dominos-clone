@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   transition: all 0.5s ease;
+  background-color: var(--primary-white);
 }
 
 .container.scrolled {
