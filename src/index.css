@@ -10,4 +10,9 @@
   --border-default: #ccc;
   --text-primary: #393336;
   --text-secondary: #545454;
+  --text-brand-red: #e31837;
+}
+
+html {
+  font-size: 14px;
 }
