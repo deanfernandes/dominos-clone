@@ -1,7 +1,7 @@
 import MenuHeader from "../MenuHeader";
 import MenuItemCard from "../MenuItemCard";
 import classes from "./SpecialityPizzasGrid.module.css";
-import DietaryTagBar from "../DietaryTagBar";
+import DietaryTagBar from "../dietary/DietaryTagBar";
 
 export default function SpecialityPizzasGrid() {
   return (
