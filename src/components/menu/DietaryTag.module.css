@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  align-items: center;
+  color: #006491;
+  font-weight: bold;
+  font-family: "Lato bold", Helvetica, Arial, sans-serif;
+  font-size: 1.1428571429rem;
+}
+
+.button img,
+.text img {
+  width: 1.7142857143rem;
+  height: 1.7142857143rem;
+  margin-right: 0.2857142857rem;
+}
+
+.button:hover {
+  color: #005177;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  color: #393336;
+  font-weight: bold;
+  font-family: "Lato bold", Helvetica, Arial, sans-serif;
+  font-size: 1.1428571429rem;
+}
