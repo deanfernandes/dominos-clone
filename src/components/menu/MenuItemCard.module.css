@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 5px 0 rgba(57, 51, 54, 0.14),
+    0 1px 10px 0 rgba(57, 51, 54, 0.12), 0 2px 4px -1px rgba(57, 51, 54, 0.2);
+  color: #393336;
+  font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  position: relative;
+}
+
+.dietary_tags {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0.5714285714rem 0.5714285714rem 0;
+}
+
+.dietary_tags img,
+.dietary_tags svg {
+  width: 2.2857142857rem;
+  height: 2.2857142857rem;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.header picture {
+  width: 100%;
+}
+
+.info_icon {
+  fill: #005177;
+}
+
+.icon_button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.add_button {
+  background-color: #41a934;
+  border-top-left-radius: 4.2857142857rem;
+  color: var(--primary-white);
+  border: none;
+  cursor: pointer;
+  height: 4.2857142857rem;
+  width: 4.2857142857rem;
+  font-size: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add_button:hover {
+  background-color: rgb(56, 146, 45);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_button_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dietary_tags > div {
+  display: flex;
+  column-gap: 5px;
+}
