@@ -13,7 +13,7 @@ export default function DietaryModal({
 }: DietaryModalProps) {
   return (
     <div className={classes.backdrop} onClick={onClose}>
-      <div className={classes.container}>
+      <div className={classes.container} onClick={(e) => e.stopPropagation()}>
         <div className={classes.header}>
           <div className={classes.header_title}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
