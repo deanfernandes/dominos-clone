@@ -16,11 +16,13 @@
   display: flex;
   flex-direction: column;
   padding: 1.7142857143rem;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.7142857143rem;
 }
 
 .header_title {
@@ -29,7 +31,6 @@
 
 .header h2 {
   font-size: 2.2857142857rem;
-  user-select: text;
 }
 
 .header svg {
@@ -49,6 +50,7 @@
 .footer {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1.7142857143rem;
 }
 
 .footer button {
@@ -64,4 +66,22 @@
 
 .footer button:hover {
   background-color: rgb(38, 96, 108);
+}
+
+.container a {
+  color: #006491;
+  font-weight: bold;
+}
+
+.container a:hover {
+  color: rgb(0, 82, 119);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
