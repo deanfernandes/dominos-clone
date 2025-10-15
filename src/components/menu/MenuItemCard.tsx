@@ -6,31 +6,25 @@ import spicyIcon from "../../assets/dietary_icons/spicy.svg";
 import type { AllergenModalData } from "../../types/AllergenModalData";
 import { useState } from "react";
 import AllergenModal from "./AllergenModal";
+import type { MenuItem } from "../../types/MenuItem";
 
 interface MenuItemCardProps {
-  imgUrl: string;
-  isVegetarian: boolean;
-  isPlantBased: boolean;
-  isGlutenFree: boolean;
-  isSpicy: boolean;
-  title: string;
-  calories: number;
-  minServes: number;
-  maxServes?: number;
-  description: string;
+  menuItem: MenuItem;
 }
 
 export default function MenuItemCard({
-  imgUrl,
-  isVegetarian,
-  isPlantBased,
-  isGlutenFree,
-  isSpicy,
-  title,
-  calories,
-  minServes,
-  maxServes,
-  description,
+  menuItem: {
+    name,
+    description,
+    imgUrl,
+    isVegetarian,
+    isPlantBased,
+    isGlutenFree,
+    isSpicy,
+    calories,
+    minServes,
+    maxServes,
+  },
 }: MenuItemCardProps) {
   const [allergenModalData, setAllergenModalData] =
     useState<AllergenModalData | null>(null);
@@ -55,7 +49,7 @@ export default function MenuItemCard({
             className={classes.icon_button}
             onClick={() =>
               setAllergenModalData({
-                itemName: title,
+                itemName: name,
                 itemDescription: description,
               })
             }
@@ -74,7 +68,7 @@ export default function MenuItemCard({
         </picture>
       </div>
       <div className={classes.footer}>
-        <h2>{title}</h2>
+        <h2>{name}</h2>
         <p>
           {calories}kcal | Serves {minServes}
           {maxServes && `-${maxServes}`}

@@ -5,3 +5,10 @@
   max-width: 1248px;
   margin: 0 auto;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 1.7142857143rem;
+  grid-row-gap: 1.7142857143rem;
+}

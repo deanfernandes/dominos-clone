@@ -65,11 +65,14 @@
 .footer {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .add_button_container {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
 }
 
 .dietary_tags > div {
