@@ -1,8 +1,8 @@
 import DietaryTag from "./DietaryTag";
-import vegetarianIcon from "../../../assets/dietary/vegetarian.svg";
-import plantBasedIcon from "../../../assets/dietary/plant_based.svg";
-import glutenFreeIcon from "../../../assets/dietary/gluten_free.svg";
-import spicyIcon from "../../../assets/dietary/spicy.svg";
+import vegetarianIcon from "../../../assets/menu/dietary/vegetarian.svg";
+import plantBasedIcon from "../../../assets/menu/dietary/plant_based.svg";
+import glutenFreeIcon from "../../../assets/menu/dietary/gluten_free.svg";
+import spicyIcon from "../../../assets/menu/dietary/spicy.svg";
 import classes from "./DietaryTagBar.module.css";
 import { useState } from "react";
 import DietaryModal from "./DietaryModal";
