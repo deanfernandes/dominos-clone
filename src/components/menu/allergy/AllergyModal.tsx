@@ -1,12 +1,12 @@
-import type { AllergenModalData } from "../../types/AllergenModalData";
-import classes from "./AllergenModal.module.css";
+import type { AllergyModalData } from "../../../types/AllergyModalData";
+import classes from "./AllergyModal.module.css";
 
-interface AllergenModalProps {
-  data: AllergenModalData;
+interface AllergyModalProps {
+  data: AllergyModalData;
   onClose: () => void;
 }
 
-export default function AllergenModal({ data, onClose }: AllergenModalProps) {
+export default function AllergyModal({ data, onClose }: AllergyModalProps) {
   return (
     <div className={classes.backdrop} onClick={onClose}>
       <div className={classes.container} onClick={(e) => e.stopPropagation()}>

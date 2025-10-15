@@ -1,4 +1,4 @@
-export type AllergenModalData = {
+export type AllergyModalData = {
   itemName: string;
   itemDescription: string;
 };

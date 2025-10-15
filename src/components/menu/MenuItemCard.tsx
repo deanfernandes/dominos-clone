@@ -1,11 +1,11 @@
 import classes from "./MenuItemCard.module.css";
-import vegetarianIcon from "../../assets/dietary_icons/vegetarian.svg";
-import plantBasedIcon from "../../assets/dietary_icons/plant_based.svg";
-import glutenFreeIcon from "../../assets/dietary_icons/gluten_free.svg";
-import spicyIcon from "../../assets/dietary_icons/spicy.svg";
-import type { AllergenModalData } from "../../types/AllergenModalData";
+import vegetarianIcon from "../../assets/dietary/vegetarian.svg";
+import plantBasedIcon from "../../assets/dietary/plant_based.svg";
+import glutenFreeIcon from "../../assets/dietary/gluten_free.svg";
+import spicyIcon from "../../assets/dietary/spicy.svg";
+import type { AllergyModalData } from "../../types/AllergyModalData";
 import { useState } from "react";
-import AllergenModal from "./AllergenModal";
+import AllergenModal from "./allergy/AllergyModal";
 import type { MenuItem } from "../../types/MenuItem";
 
 interface MenuItemCardProps {
@@ -27,7 +27,7 @@ export default function MenuItemCard({
   },
 }: MenuItemCardProps) {
   const [allergenModalData, setAllergenModalData] =
-    useState<AllergenModalData | null>(null);
+    useState<AllergyModalData | null>(null);
 
   return (
     <div className={classes.container}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./AllergyAccordian.module.css";
 
-export default function AllergyInfoCard() {
+export default function AllergyAccordian() {
   const [showAllergyContent, setShowAllergyContent] = useState<boolean>(false);
 
   return (

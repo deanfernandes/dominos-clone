@@ -6,12 +6,7 @@
   align-items: center;
 }
 
-.banner_container,
-.container img {
-  width: 100%;
-}
-
-.container h1 {
+.heading {
   font-size: 3.8571428571rem;
   font-weight: bold;
   color: var(--primary-white);
@@ -20,4 +15,8 @@
   font-family: "Dominos primary", "Impact", "Arial Narrow", Helvetica, Arial,
     sans-serif;
   margin-bottom: 2.2857142857rem;
+}
+
+.banner {
+  width: 100%;
 }
