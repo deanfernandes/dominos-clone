@@ -1,6 +1,6 @@
 .allergy_card_container {
   max-width: 1248px;
-  margin: 0 auto;
+  margin: 24px auto;
   font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
   color: #393336;
   border-bottom: 0.0714285714rem solid var(--border-default);

@@ -22,6 +22,22 @@ import clpCheeseAndTomato from "../assets/menu/pizza/cheeky_little_pizzas/cheese
 import clpPepperoniPassion from "../assets/menu/pizza/cheeky_little_pizzas/pepperoni_passion.webp";
 import sausageBacon from "../assets/menu/pizza/cheeky_little_pizzas/sausage_bacon.webp";
 import clpVegiSupreme from "../assets/menu/pizza/cheeky_little_pizzas/vegi_supreme.webp";
+import sidesBanner from "../assets/menu/sides_banner.webp";
+import sevenChickenStrips from "../assets/menu/sides/7_chicken_strips.webp";
+import fourteenChickenStrips from "../assets/menu/sides/14_chicken_strips.webp";
+import cheesyGarlicBread from "../assets/menu/sides/cheesy_garlic_bread.webp";
+import fries from "../assets/menu/sides/fries.webp";
+import garlicPizzaBread from "../assets/menu/sides/garlic_pizza_bread.webp";
+import gunpowderChickenWings from "../assets/menu/sides/gunpowder_chicken_wings.webp";
+import macNCheese from "../assets/menu/sides/mac_n_cheese.webp";
+import potatoWedges from "../assets/menu/sides/potato_wedges.webp";
+import dessertsBanner from "../assets/menu/desserts_banner.webp";
+import chocCaramelCookie from "../assets/menu/desserts/choc_caramel_cookie.webp";
+import chocDoughBalls from "../assets/menu/desserts/choc_dough_balls.webp";
+import chocoPizza from "../assets/menu/desserts/choco_pizza.webp";
+import cookies from "../assets/menu/desserts/cookies.webp";
+import cocaColaClassic from "../assets/menu/drinks/coca_cola_classic.webp";
+import dietCoke from "../assets/menu/drinks/diet_coke.webp";
 
 const menuItems: MenuItem[] = [
   {
@@ -200,7 +216,6 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 571,
     minServes: 1,
-    maxServes: 1,
   },
   {
     name: "Cheeky Little Pizza - BBQ, Chicken & Bacon",
@@ -224,7 +239,6 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 495,
     minServes: 1,
-    maxServes: 1,
   },
   {
     name: "Cheeky Little Pizza - Cheese & Tomato",
@@ -236,7 +250,6 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 535,
     minServes: 1,
-    maxServes: 1,
   },
   {
     name: "Cheeky Little Pizza - Sausage & Bacon",
@@ -248,7 +261,162 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 541,
     minServes: 1,
-    maxServes: 1,
+  },
+];
+const sides: MenuItem[] = [
+  {
+    name: "7 Gunpowder Chicken Wings",
+    description: "Double up for £13.99",
+    imgUrl: gunpowderChickenWings,
+    isVegetarian: false,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: true,
+    calories: 494,
+    minServes: 2,
+  },
+  {
+    name: "Garlic Pizza Bread",
+    description: "Double up for £10.49",
+    imgUrl: garlicPizzaBread,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 614,
+    minServes: 2,
+  },
+  {
+    name: "Potato Wedges",
+    description: "Double up for £10.49",
+    imgUrl: potatoWedges,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 263,
+    minServes: 2,
+  },
+  {
+    name: "The Ultimate Cheesy Garlic Bread",
+    description: "Double up for £12.99",
+    imgUrl: cheesyGarlicBread,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 834,
+    minServes: 2,
+  },
+  {
+    name: "Fries",
+    description: "",
+    imgUrl: fries,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 518,
+    minServes: 2,
+  },
+  {
+    name: "Mac 'n' Cheese",
+    description: "Double up for £13.99",
+    imgUrl: macNCheese,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 438,
+    minServes: 1,
+  },
+  {
+    name: "7 Chicken Strippers®",
+    description: "",
+    imgUrl: sevenChickenStrips,
+    isVegetarian: false,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 436,
+    minServes: 2,
+  },
+  {
+    name: "14 Chicken Strippers®",
+    description: "",
+    imgUrl: fourteenChickenStrips,
+    isVegetarian: false,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 871,
+    minServes: 4,
+  },
+];
+const desserts: MenuItem[] = [
+  {
+    name: "Double Choc & Caramel Cookies",
+    description: "",
+    imgUrl: chocCaramelCookie,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 668,
+    minServes: 4,
+  },
+  {
+    name: "Domino’s Cookies",
+    description: "Double up for £10.49",
+    imgUrl: cookies,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 694,
+    minServes: 4,
+  },
+  {
+    name: "Twisted Dough Balls® - Chocolate Cinnamon",
+    description: "Double up for £10.99",
+    imgUrl: chocDoughBalls,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 767,
+    minServes: 2,
+  },
+  {
+    name: "Lotta-chocca Pizza",
+    description: "Double up for £10.99",
+    imgUrl: chocoPizza,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 828,
+    minServes: 4,
+  },
+];
+const drinks: MenuItem[] = [
+  {
+    name: "Coca-Cola Classic",
+    description: "Double up for £6.19",
+    imgUrl: cocaColaClassic,
+    isVegetarian: true,
+    isPlantBased: true,
+    isGlutenFree: true,
+    isSpicy: false,
+  },
+  {
+    name: "Diet Coke",
+    description: "Double up for £5.49",
+    imgUrl: dietCoke,
+    isVegetarian: true,
+    isPlantBased: true,
+    isGlutenFree: true,
+    isSpicy: false,
   },
 ];
 
@@ -261,6 +429,7 @@ export default function Menu() {
         heading="Pizza"
         bannerImgUrl={pizzaBanner}
         bannerImgAlt="Freshly baked 'Ultimate Indian Feast' pizza"
+        id="pizza"
       >
         <MenuSubSection heading="Speciality Pizzas" menuItems={menuItems} />
         <MenuSubSection heading="Gluten Free" menuItems={glutenFreePizzas} />
@@ -272,6 +441,26 @@ export default function Menu() {
           heading="Cheeky Little Pizzas"
           menuItems={cheekyLittlePizzas}
         />
+      </MenuSection>
+      <MenuSection
+        heading="Fancy A Bit On The Side?"
+        bannerImgUrl={sidesBanner}
+        bannerImgAlt="Delicious crispy chicken"
+        id="sides"
+      >
+        <MenuSubSection menuItems={sides} />
+      </MenuSection>
+      <MenuSection
+        heading="Sweeten The Deal"
+        bannerImgUrl={dessertsBanner}
+        bannerImgAlt="Hot chocolate fudge cookie with caramel"
+        id="desserts"
+      >
+        <MenuSubSection menuItems={desserts} />
+      </MenuSection>
+
+      <MenuSection heading="Thirst Quenchers" bannerImgAlt="" id="drinks">
+        <MenuSubSection menuItems={drinks} />
       </MenuSection>
     </div>
   );

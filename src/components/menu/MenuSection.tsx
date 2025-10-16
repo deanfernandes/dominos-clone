@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 
 interface MenuSectionProps {
   heading: string;
-  bannerImgUrl: string;
-  bannerImgAlt: string;
+  id: string;
+  bannerImgUrl?: string;
+  bannerImgAlt?: string;
   children: ReactNode;
 }
 
@@ -13,13 +14,16 @@ export default function MenuSection({
   bannerImgUrl,
   bannerImgAlt,
   children,
+  id,
 }: MenuSectionProps) {
   return (
     <section className={classes.container}>
-      <h2 className={classes.heading} id={heading.toLowerCase()}>
+      <h2 className={classes.heading} id={id}>
         {heading}
       </h2>
-      <img src={bannerImgUrl} alt={bannerImgAlt} className={classes.banner} />
+      {bannerImgUrl && (
+        <img src={bannerImgUrl} alt={bannerImgAlt} className={classes.banner} />
+      )}
       {children}
     </section>
   );

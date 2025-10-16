@@ -6,7 +6,7 @@ export type MenuItem = {
   isPlantBased: boolean;
   isGlutenFree: boolean;
   isSpicy: boolean;
-  calories: number;
-  minServes: number;
+  calories?: number;
+  minServes?: number;
   maxServes?: number;
 };

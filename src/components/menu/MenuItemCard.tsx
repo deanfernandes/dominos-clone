@@ -69,10 +69,12 @@ export default function MenuItemCard({
       </div>
       <div className={classes.footer}>
         <h2>{name}</h2>
-        <p>
-          {calories}kcal | Serves {minServes}
-          {maxServes && `-${maxServes}`}
-        </p>
+        {calories && minServes && (
+          <p>
+            {calories}kcal | Serves {minServes}
+            {maxServes && `-${maxServes}`}
+          </p>
+        )}
         <div className={classes.add_button_container}>
           <button className={classes.add_button}>
             <span>+</span>

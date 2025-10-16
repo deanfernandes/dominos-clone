@@ -31,6 +31,7 @@ export default function MenuNavBar() {
       >
         Drinks
       </a>
+      {/*
       <a
         href="#lunch-wraps"
         className={classes.menu_nav_bar_link}
@@ -38,6 +39,7 @@ export default function MenuNavBar() {
       >
         Lunch & Wraps
       </a>
+       */}
     </nav>
   );
 }
