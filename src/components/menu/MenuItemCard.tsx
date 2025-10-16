@@ -63,9 +63,11 @@ export default function MenuItemCard({
             </svg>
           </button>
         </div>
-        <picture>
-          <img src={imgUrl} alt="" />
-        </picture>
+        <button>
+          <picture>
+            <img src={imgUrl} alt="" />
+          </picture>
+        </button>
       </div>
       <div className={classes.footer}>
         <h2>{name}</h2>

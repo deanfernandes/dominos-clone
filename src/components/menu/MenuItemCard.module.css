@@ -79,3 +79,9 @@
   display: flex;
   column-gap: 5px;
 }
+
+.header button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
