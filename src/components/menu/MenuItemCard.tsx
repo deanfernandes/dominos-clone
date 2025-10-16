@@ -6,26 +6,13 @@ import spicyIcon from "../../assets/menu/dietary/spicy.svg";
 import type { AllergyModalData } from "../../types/AllergyModalData";
 import { useState } from "react";
 import AllergenModal from "./allergy/AllergyModal";
-import type { MenuItem } from "../../types/MenuItem";
+import type { AnyMenuItem } from "../../types/MenuItem";
 
 interface MenuItemCardProps {
-  menuItem: MenuItem;
+  item: AnyMenuItem;
 }
 
-export default function MenuItemCard({
-  menuItem: {
-    name,
-    description,
-    imgUrl,
-    isVegetarian,
-    isPlantBased,
-    isGlutenFree,
-    isSpicy,
-    calories,
-    minServes,
-    maxServes,
-  },
-}: MenuItemCardProps) {
+export default function MenuItemCard({ item }: MenuItemCardProps) {
   const [allergenModalData, setAllergenModalData] =
     useState<AllergyModalData | null>(null);
 
@@ -34,23 +21,29 @@ export default function MenuItemCard({
       <div className={classes.header}>
         <div className={classes.dietary_tags}>
           <div>
-            {isVegetarian && (
-              <img src={vegetarianIcon} alt="" title="Vegetarian" />
+            {item.type !== "drink" && (
+              <div>
+                {item.isVegetarian && (
+                  <img src={vegetarianIcon} alt="" title="Vegetarian" />
+                )}
+                {item.isPlantBased && (
+                  <img src={plantBasedIcon} alt="" title="Plant-based" />
+                )}
+                {item.isGlutenFree && (
+                  <img src={glutenFreeIcon} alt="" title="Gluten free" />
+                )}
+                {item.isSpicy && (
+                  <img src={spicyIcon} alt="" title="Hot & spicy" />
+                )}
+              </div>
             )}
-            {isPlantBased && (
-              <img src={plantBasedIcon} alt="" title="Plant-based" />
-            )}
-            {isGlutenFree && (
-              <img src={glutenFreeIcon} alt="" title="Gluten free" />
-            )}
-            {isSpicy && <img src={spicyIcon} alt="" title="Hot & spicy" />}
           </div>
           <button
             className={classes.icon_button}
             onClick={() =>
               setAllergenModalData({
-                itemName: name,
-                itemDescription: description,
+                itemName: item.name,
+                itemDescription: item.description,
               })
             }
           >
@@ -65,16 +58,16 @@ export default function MenuItemCard({
         </div>
         <button>
           <picture>
-            <img src={imgUrl} alt="" />
+            <img src={item.imgUrl} alt="" />
           </picture>
         </button>
       </div>
       <div className={classes.footer}>
-        <h2>{name}</h2>
-        {calories && minServes && (
+        <h2>{item.name}</h2>
+        {item.type !== "drink" && (
           <p>
-            {calories}kcal | Serves {minServes}
-            {maxServes && `-${maxServes}`}
+            {item.calories}kcal | Serves {item.minServes}
+            {item.maxServes && `-${item.maxServes}`}
           </p>
         )}
         <div className={classes.add_button_container}>

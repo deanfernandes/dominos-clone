@@ -1,9 +1,14 @@
 import MenuBanner from "../components/menu/MenuBanner.tsx";
 import AllergyAccordian from "../components/menu/allergy/AllergyAccordian.tsx";
 import MenuSection from "../components/menu/MenuSection.tsx";
-import pizzaBanner from "../assets/menu/pizza_banner.webp";
 import MenuSubSection from "../components/menu/MenuSubSection.tsx";
-import type { MenuItem } from "../types/MenuItem.ts";
+import type {
+  PizzaItem,
+  SideItem,
+  DessertItem,
+  DrinkItem,
+} from "../types/MenuItem.ts";
+import pizzaBanner from "../assets/menu/pizza_banner.webp";
 import indianGunpowderChicken from "../assets/menu/pizza/indian_gunpowder_chicken.webp";
 import ultimateMasalaPaneer from "../assets/menu/pizza/ultimate_masala_paneer.webp";
 import pepperoniPassion from "../assets/menu/pizza/pepperoni_passion.webp";
@@ -39,7 +44,7 @@ import cookies from "../assets/menu/desserts/cookies.webp";
 import cocaColaClassic from "../assets/menu/drinks/coca_cola_classic.webp";
 import dietCoke from "../assets/menu/drinks/diet_coke.webp";
 
-const menuItems: MenuItem[] = [
+const specialityPizzas: PizzaItem[] = [
   {
     name: "The Ultimate Gunpowder Chicken",
     description:
@@ -52,6 +57,17 @@ const menuItems: MenuItem[] = [
     calories: 1905,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: new Date().toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [
+        { size: 'Large 13.5"', price: 25.99 },
+        { size: 'Medium 11.5"', price: 23.99 },
+        { size: 'Small 9.5"', price: 21.99 },
+        { size: 'Personal 7"', price: 10.99 },
+      ],
+    },
   },
   {
     name: "The Ultimate Masala Paneer",
@@ -65,6 +81,17 @@ const menuItems: MenuItem[] = [
     calories: 2089,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: new Date().toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [
+        { size: 'Large 13.5"', price: 25.99 },
+        { size: 'Medium 11.5"', price: 23.99 },
+        { size: 'Small 9.5"', price: 21.99 },
+        { size: 'Personal 7"', price: 10.99 },
+      ],
+    },
   },
   {
     name: "Pepperoni Passion®",
@@ -78,6 +105,17 @@ const menuItems: MenuItem[] = [
     calories: 2642,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: new Date().toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [
+        { size: 'Large 13.5"', price: 25.99 },
+        { size: 'Medium 11.5"', price: 23.99 },
+        { size: 'Small 9.5"', price: 21.99 },
+        { size: 'Personal 7"', price: 10.99 },
+      ],
+    },
   },
   {
     name: "Original Cheese & Tomato",
@@ -91,9 +129,20 @@ const menuItems: MenuItem[] = [
     calories: 2171,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: new Date().toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [
+        { size: 'Large 13.5"', price: 25.99 },
+        { size: 'Medium 11.5"', price: 23.99 },
+        { size: 'Small 9.5"', price: 21.99 },
+        { size: 'Personal 7"', price: 10.99 },
+      ],
+    },
   },
 ];
-const glutenFreePizzas: MenuItem[] = [
+const glutenFreePizzas: PizzaItem[] = [
   {
     name: "Gluten Free Cheese & Tomato",
     description: "",
@@ -105,6 +154,12 @@ const glutenFreePizzas: MenuItem[] = [
     calories: 677,
     minServes: 1,
     maxServes: 2,
+    type: "pizza",
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Small 9.5"', price: 21.99 }],
+    },
   },
   {
     name: "Gluten Free Pepperoni Passion®",
@@ -117,6 +172,12 @@ const glutenFreePizzas: MenuItem[] = [
     calories: 953,
     minServes: 1,
     maxServes: 2,
+    type: "pizza",
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Small 9.5"', price: 21.99 }],
+    },
   },
   {
     name: "Gluten Free Vegi Supreme",
@@ -129,6 +190,12 @@ const glutenFreePizzas: MenuItem[] = [
     calories: 607,
     minServes: 1,
     maxServes: 2,
+    type: "pizza",
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Small 9.5"', price: 21.99 }],
+    },
   },
   {
     name: "Gluten Free Texas BBQ®",
@@ -141,6 +208,12 @@ const glutenFreePizzas: MenuItem[] = [
     calories: 775,
     minServes: 1,
     maxServes: 2,
+    type: "pizza",
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Small 9.5"', price: 21.99 }],
+    },
   },
   {
     name: "Gluten Free New Yorker",
@@ -153,9 +226,15 @@ const glutenFreePizzas: MenuItem[] = [
     calories: 829,
     minServes: 1,
     maxServes: 2,
+    type: "pizza",
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Small 9.5"', price: 21.99 }],
+    },
   },
 ];
-const plantBasedPizzas: MenuItem[] = [
+const plantBasedPizzas: PizzaItem[] = [
   {
     name: "Plant-Based Margheri-tastic - Medium",
     description: "",
@@ -167,6 +246,12 @@ const plantBasedPizzas: MenuItem[] = [
     calories: 1365,
     minServes: 2,
     maxServes: 3,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Medium 11.5"', price: 23.99 }],
+    },
   },
   {
     name: "Plant-Based Margheri-tastic - Large",
@@ -179,6 +264,12 @@ const plantBasedPizzas: MenuItem[] = [
     calories: 1449,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Medium 11.5"', price: 23.99 }],
+    },
   },
   {
     name: "Plant-Based Vegi Supreme - Medium",
@@ -191,6 +282,12 @@ const plantBasedPizzas: MenuItem[] = [
     calories: 1373,
     minServes: 2,
     maxServes: 3,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Medium 11.5"', price: 23.99 }],
+    },
   },
   {
     name: "Plant-Based Vegi Supreme - Large",
@@ -203,9 +300,15 @@ const plantBasedPizzas: MenuItem[] = [
     calories: 1486,
     minServes: 3,
     maxServes: 4,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Medium 11.5"', price: 23.99 }],
+    },
   },
 ];
-const cheekyLittlePizzas: MenuItem[] = [
+const cheekyLittlePizzas: PizzaItem[] = [
   {
     name: "Cheeky Little Pizza - Pepperoni",
     description: "",
@@ -216,6 +319,12 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 571,
     minServes: 1,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Personal 7"', price: 10.99 }],
+    },
   },
   {
     name: "Cheeky Little Pizza - BBQ, Chicken & Bacon",
@@ -228,6 +337,12 @@ const cheekyLittlePizzas: MenuItem[] = [
     calories: 594,
     minServes: 1,
     maxServes: 1,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Personal 7"', price: 10.99 }],
+    },
   },
   {
     name: "Cheeky Little Pizza - Vegi Classic",
@@ -239,6 +354,12 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 495,
     minServes: 1,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Personal 7"', price: 10.99 }],
+    },
   },
   {
     name: "Cheeky Little Pizza - Cheese & Tomato",
@@ -250,6 +371,12 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 535,
     minServes: 1,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Personal 7"', price: 10.99 }],
+    },
   },
   {
     name: "Cheeky Little Pizza - Sausage & Bacon",
@@ -261,9 +388,16 @@ const cheekyLittlePizzas: MenuItem[] = [
     isSpicy: false,
     calories: 541,
     minServes: 1,
+    type: "pizza",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [{ size: 'Personal 7"', price: 10.99 }],
+    },
   },
 ];
-const sides: MenuItem[] = [
+
+const sides: SideItem[] = [
   {
     name: "7 Gunpowder Chicken Wings",
     description: "Double up for £13.99",
@@ -274,6 +408,12 @@ const sides: MenuItem[] = [
     isSpicy: true,
     calories: 494,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "Garlic Pizza Bread",
@@ -285,6 +425,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 614,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "Potato Wedges",
@@ -296,6 +442,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 263,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "The Ultimate Cheesy Garlic Bread",
@@ -307,6 +459,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 834,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "Fries",
@@ -318,6 +476,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 518,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "Mac 'n' Cheese",
@@ -329,6 +493,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 438,
     minServes: 1,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "7 Chicken Strippers®",
@@ -340,6 +510,12 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 436,
     minServes: 2,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
   {
     name: "14 Chicken Strippers®",
@@ -351,9 +527,16 @@ const sides: MenuItem[] = [
     isSpicy: false,
     calories: 871,
     minServes: 4,
+    type: "side",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 7.99,
+    },
   },
 ];
-const desserts: MenuItem[] = [
+
+const desserts: DessertItem[] = [
   {
     name: "Double Choc & Caramel Cookies",
     description: "",
@@ -364,6 +547,12 @@ const desserts: MenuItem[] = [
     isSpicy: false,
     calories: 668,
     minServes: 4,
+    type: "dessert",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 6.99,
+    },
   },
   {
     name: "Domino’s Cookies",
@@ -375,6 +564,12 @@ const desserts: MenuItem[] = [
     isSpicy: false,
     calories: 694,
     minServes: 4,
+    type: "dessert",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 6.99,
+    },
   },
   {
     name: "Twisted Dough Balls® - Chocolate Cinnamon",
@@ -386,6 +581,12 @@ const desserts: MenuItem[] = [
     isSpicy: false,
     calories: 767,
     minServes: 2,
+    type: "dessert",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 6.99,
+    },
   },
   {
     name: "Lotta-chocca Pizza",
@@ -397,26 +598,39 @@ const desserts: MenuItem[] = [
     isSpicy: false,
     calories: 828,
     minServes: 4,
+    type: "dessert",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "single",
+      price: 6.99,
+    },
   },
 ];
-const drinks: MenuItem[] = [
+
+const drinks: DrinkItem[] = [
   {
     name: "Coca-Cola Classic",
     description: "Double up for £6.19",
     imgUrl: cocaColaClassic,
-    isVegetarian: true,
-    isPlantBased: true,
-    isGlutenFree: true,
-    isSpicy: false,
+    type: "drink",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    caloriesInfoLink: "https://www.coca-cola.co.uk/drinks/coca-cola/coca-cola",
+    pricing: {
+      pricingType: "single",
+      price: 3.35,
+    },
   },
   {
     name: "Diet Coke",
     description: "Double up for £5.49",
     imgUrl: dietCoke,
-    isVegetarian: true,
-    isPlantBased: true,
-    isGlutenFree: true,
-    isSpicy: false,
+    type: "drink",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    caloriesInfoLink: "https://www.coca-cola.co.uk/drinks/coca-cola/coca-cola",
+    pricing: {
+      pricingType: "single",
+      price: 2.99,
+    },
   },
 ];
 
@@ -431,15 +645,12 @@ export default function Menu() {
         bannerImgAlt="Freshly baked 'Ultimate Indian Feast' pizza"
         id="pizza"
       >
-        <MenuSubSection heading="Speciality Pizzas" menuItems={menuItems} />
-        <MenuSubSection heading="Gluten Free" menuItems={glutenFreePizzas} />
-        <MenuSubSection
-          heading="Plant-based Pizzas"
-          menuItems={plantBasedPizzas}
-        />
+        <MenuSubSection heading="Speciality Pizzas" items={specialityPizzas} />
+        <MenuSubSection heading="Gluten Free" items={glutenFreePizzas} />
+        <MenuSubSection heading="Plant-based Pizzas" items={plantBasedPizzas} />
         <MenuSubSection
           heading="Cheeky Little Pizzas"
-          menuItems={cheekyLittlePizzas}
+          items={cheekyLittlePizzas}
         />
       </MenuSection>
       <MenuSection
@@ -448,7 +659,7 @@ export default function Menu() {
         bannerImgAlt="Delicious crispy chicken"
         id="sides"
       >
-        <MenuSubSection menuItems={sides} />
+        <MenuSubSection items={sides} />
       </MenuSection>
       <MenuSection
         heading="Sweeten The Deal"
@@ -456,11 +667,11 @@ export default function Menu() {
         bannerImgAlt="Hot chocolate fudge cookie with caramel"
         id="desserts"
       >
-        <MenuSubSection menuItems={desserts} />
+        <MenuSubSection items={desserts} />
       </MenuSection>
 
       <MenuSection heading="Thirst Quenchers" bannerImgAlt="" id="drinks">
-        <MenuSubSection menuItems={drinks} />
+        <MenuSubSection items={drinks} />
       </MenuSection>
     </div>
   );
