@@ -15,6 +15,13 @@ interface MenuItemCardProps {
 export default function MenuItemCard({ item }: MenuItemCardProps) {
   const [allergenModalData, setAllergenModalData] =
     useState<AllergyModalData | null>(null);
+  const [selectedPrice, setSelectedPrice] = useState<number>(() => {
+    if (item.pricing.pricingType === "single") {
+      return item.pricing.price;
+    } else {
+      return item.pricing.sizePriceOptions[0].price;
+    }
+  });
 
   return (
     <div className={classes.container}>
@@ -70,7 +77,30 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
             {item.maxServes && `-${item.maxServes}`}
           </p>
         )}
+        {item.pricing.pricingType === "multi" && (
+          <select onChange={(e) => setSelectedPrice(Number(e.target.value))}>
+            {item.pricing.sizePriceOptions.map((spo, i) => (
+              <option key={i} value={spo.price}>
+                {spo.size} {spo.price}
+              </option>
+            ))}
+          </select>
+        )}
         <div className={classes.add_button_container}>
+          {item.type === "pizza" ? (
+            <button>Customize</button>
+          ) : (
+            <div>
+              <span className={classes.selected_price}>£{selectedPrice}</span>{" "}
+              <select>
+                {[...Array(10)].map((_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
           <button className={classes.add_button}>
             <span>+</span>
           </button>

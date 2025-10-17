@@ -70,7 +70,7 @@
 
 .add_button_container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   height: 100%;
 }
@@ -84,4 +84,17 @@
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.footer select {
+  height: 3.4285714286rem;
+  font-size: 1rem;
+  border-color: #ccc;
+  cursor: pointer;
+  color: #545454;
+  padding: 0.7142857143rem 1rem;
+}
+
+.selected_price {
+  font-weight: bold;
 }

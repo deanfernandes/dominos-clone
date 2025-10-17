@@ -43,6 +43,7 @@ import chocoPizza from "../assets/menu/desserts/choco_pizza.webp";
 import cookies from "../assets/menu/desserts/cookies.webp";
 import cocaColaClassic from "../assets/menu/drinks/coca_cola_classic.webp";
 import dietCoke from "../assets/menu/drinks/diet_coke.webp";
+import cookieDough from "../assets/menu/desserts/cookie_dough.webp";
 
 const specialityPizzas: PizzaItem[] = [
   {
@@ -603,6 +604,26 @@ const desserts: DessertItem[] = [
     pricing: {
       pricingType: "single",
       price: 6.99,
+    },
+  },
+  {
+    name: "Cookie Dough",
+    description: "",
+    imgUrl: cookieDough,
+    isVegetarian: true,
+    isPlantBased: false,
+    isGlutenFree: false,
+    isSpicy: false,
+    calories: 828,
+    minServes: 4,
+    type: "dessert",
+    createdAt: "2025-10-02T00:00:00.000Z",
+    pricing: {
+      pricingType: "multi",
+      sizePriceOptions: [
+        { size: "100ml", price: 3.49 },
+        { size: "465ml", price: 7.25 },
+      ],
     },
   },
 ];
