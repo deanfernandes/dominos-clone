@@ -13,7 +13,7 @@ interface MenuItemCardProps {
 }
 
 export default function MenuItemCard({ item }: MenuItemCardProps) {
-  const [allergenModalData, setAllergenModalData] =
+  const [allergyModalData, setAllergyModalData] =
     useState<AllergyModalData | null>(null);
   const [selectedPrice, setSelectedPrice] = useState<number>(() => {
     if (item.pricing.pricingType === "single") {
@@ -27,7 +27,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
     <div className={classes.container}>
       <div className={classes.header}>
         <div className={classes.dietary_tags}>
-          <div>
+          <div className={classes.food_tags_container}>
             {item.type !== "drink" && (
               <div>
                 {item.isVegetarian && (
@@ -48,7 +48,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
           <button
             className={classes.icon_button}
             onClick={() =>
-              setAllergenModalData({
+              setAllergyModalData({
                 itemName: item.name,
                 itemDescription: item.description,
               })
@@ -88,7 +88,9 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         )}
         <div className={classes.add_button_container}>
           {item.type === "pizza" ? (
-            <button>Customize</button>
+            <a href="#customize" className={classes.customize_link}>
+              Customize
+            </a>
           ) : (
             <div>
               <span className={classes.selected_price}>£{selectedPrice}</span>{" "}
@@ -107,10 +109,10 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         </div>
       </div>
 
-      {allergenModalData && (
+      {allergyModalData && (
         <AllergenModal
-          data={allergenModalData}
-          onClose={() => setAllergenModalData(null)}
+          data={allergyModalData}
+          onClose={() => setAllergyModalData(null)}
         />
       )}
     </div>

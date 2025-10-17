@@ -75,7 +75,7 @@
   height: 100%;
 }
 
-.dietary_tags > div {
+.dietary_tags div {
   display: flex;
   column-gap: 5px;
 }
@@ -93,8 +93,22 @@
   cursor: pointer;
   color: #545454;
   padding: 0.7142857143rem 1rem;
+  font-weight: bold;
 }
 
 .selected_price {
   font-weight: bold;
+}
+
+.customize_link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #006491;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.customize_link:hover {
+  text-decoration: underline;
+  color: rgb(0, 82, 119);
 }
