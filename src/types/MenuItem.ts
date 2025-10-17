@@ -32,6 +32,7 @@ export interface DessertItem extends FoodMenuItem {
 export interface DrinkItem extends MenuItem {
   type: "drink";
   caloriesInfoLink: string;
+  isSoftDrink: boolean;
 }
 
 export interface SizePriceOption {

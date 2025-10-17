@@ -3,6 +3,7 @@ import vegetarianIcon from "../../assets/menu/dietary/vegetarian.svg";
 import plantBasedIcon from "../../assets/menu/dietary/plant_based.svg";
 import glutenFreeIcon from "../../assets/menu/dietary/gluten_free.svg";
 import spicyIcon from "../../assets/menu/dietary/spicy.svg";
+import softDrinkIcon from "../../assets/menu/dietary/soft_drinks.svg";
 import type { AllergyModalData } from "../../types/AllergyModalData";
 import { useState } from "react";
 import AllergenModal from "./allergy/AllergyModal";
@@ -28,7 +29,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
       <div className={classes.header}>
         <div className={classes.dietary_tags}>
           <div className={classes.food_tags_container}>
-            {item.type !== "drink" && (
+            {item.type !== "drink" ? (
               <div>
                 {item.isVegetarian && (
                   <img src={vegetarianIcon} alt="" title="Vegetarian" />
@@ -41,6 +42,16 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
                 )}
                 {item.isSpicy && (
                   <img src={spicyIcon} alt="" title="Hot & spicy" />
+                )}
+              </div>
+            ) : (
+              <div>
+                {item.isSoftDrink && (
+                  <img
+                    src={softDrinkIcon}
+                    alt=""
+                    title="Soft drinks industry levy"
+                  />
                 )}
               </div>
             )}

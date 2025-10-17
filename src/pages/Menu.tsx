@@ -640,6 +640,7 @@ const drinks: DrinkItem[] = [
       pricingType: "single",
       price: 3.35,
     },
+    isSoftDrink: true,
   },
   {
     name: "Diet Coke",
@@ -652,6 +653,7 @@ const drinks: DrinkItem[] = [
       pricingType: "single",
       price: 2.99,
     },
+    isSoftDrink: false,
   },
 ];
 
@@ -666,12 +668,45 @@ export default function Menu() {
         bannerImgAlt="Freshly baked 'Ultimate Indian Feast' pizza"
         id="pizza"
       >
-        <MenuSubSection heading="Speciality Pizzas" items={specialityPizzas} />
-        <MenuSubSection heading="Gluten Free" items={glutenFreePizzas} />
-        <MenuSubSection heading="Plant-based Pizzas" items={plantBasedPizzas} />
+        <MenuSubSection
+          heading="Speciality Pizzas"
+          items={specialityPizzas}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
+        />
+        <MenuSubSection
+          heading="Gluten Free"
+          items={glutenFreePizzas}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
+        />
+        <MenuSubSection
+          heading="Plant-based Pizzas"
+          items={plantBasedPizzas}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
+        />
         <MenuSubSection
           heading="Cheeky Little Pizzas"
           items={cheekyLittlePizzas}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
         />
       </MenuSection>
       <MenuSection
@@ -680,7 +715,15 @@ export default function Menu() {
         bannerImgAlt="Delicious crispy chicken"
         id="sides"
       >
-        <MenuSubSection items={sides} />
+        <MenuSubSection
+          items={sides}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
+        />
       </MenuSection>
       <MenuSection
         heading="Sweeten The Deal"
@@ -688,11 +731,22 @@ export default function Menu() {
         bannerImgAlt="Hot chocolate fudge cookie with caramel"
         id="desserts"
       >
-        <MenuSubSection items={desserts} />
+        <MenuSubSection
+          items={desserts}
+          includedTags={[
+            "Vegetarian",
+            "Gluten free",
+            "Plant-Based",
+            "Hot & spicy",
+          ]}
+        />
       </MenuSection>
 
       <MenuSection heading="Thirst Quenchers" bannerImgAlt="" id="drinks">
-        <MenuSubSection items={drinks} />
+        <MenuSubSection
+          items={drinks}
+          includedTags={["Soft drinks industry levy"]}
+        />
       </MenuSection>
     </div>
   );
