@@ -19,6 +19,7 @@
   padding: 1.7142857143rem;
   animation: fadeIn 0.4s ease-in-out;
   z-index: 999999;
+  max-width: 588px;
 }
 
 .header {

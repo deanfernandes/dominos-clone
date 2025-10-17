@@ -98,6 +98,8 @@
 
 .selected_price {
   font-weight: bold;
+  padding-bottom: 1.4285714286rem;
+  padding-left: 1.1428571429rem;
 }
 
 .customize_link {
@@ -106,6 +108,9 @@
   color: #006491;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1rem;
+  padding-bottom: 1.4285714286rem;
+  padding-left: 1.1428571429rem;
 }
 
 .customize_link:hover {

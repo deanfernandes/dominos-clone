@@ -26,15 +26,24 @@ const allTags: {
   {
     name: "Vegetarian",
     iconUrl: vegetarianIcon,
-    modalContent: "OK for vegetarians... (same as before)",
+    modalContent:
+      "OK for vegetarians, however please note that we do not have a dedicated preparation or cooking area in our stores for vegetarian food. Our stores are busy working environments & there is a risk of cross-contamination between toppings.",
   },
   {
     name: "Plant-Based",
     iconUrl: plantBasedIcon,
     modalContent: (
       <>
-        Plant-Based. Domino’s food is freshly prepared...
-        <a href="..." target="_blank" rel="noopener noreferrer">
+        Plant-Based. Domino’s food is freshly prepared in store. Whilst we and
+        our ingredients’ suppliers take precautions, we cannot guarantee that
+        any product is free from allergens due to the risk of
+        cross-contamination. Our stores are busy working environments and there
+        is a risk of cross-contamination between toppings.{" "}
+        <a
+          href="https://corporate.dominos.co.uk/Media/Default/Corporate%20Responsibility/Food/Dominos%20Ingredients%20and%20Allergens.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Click for ingredient and allergen information.
         </a>
       </>
@@ -43,7 +52,8 @@ const allTags: {
   {
     name: "Gluten free",
     iconUrl: glutenFreeIcon,
-    modalContent: "Suitable for coeliacs... (same as before)",
+    modalContent:
+      "Suitable for coeliacs. All of our in-store procedures have been verified by Coeliac UK. A gluten free pizza crust will not be sliced.",
   },
   {
     name: "Hot & spicy",
