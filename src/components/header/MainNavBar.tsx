@@ -1,7 +1,9 @@
 import classes from "./MainNavBar.module.css";
-import { NavLink, type NavLinkRenderProps } from "react-router";
+import { NavLink, type NavLinkRenderProps, useLocation } from "react-router";
 
 export default function MainNavBar() {
+  const location = useLocation();
+
   return (
     <nav className={classes.container}>
       <div className={classes.collection_container}>
@@ -15,9 +17,7 @@ export default function MainNavBar() {
             </svg>
           </span>
           <span>Collection</span>
-          <span className={classes.collection_location}>
-            Birmingham - Northfield
-          </span>
+          <span className={classes.collection_location}>Birkenhead</span>
         </a>
       </div>
 
@@ -52,7 +52,16 @@ export default function MainNavBar() {
         >
           Deals
         </NavLink>
-        <div className={classes.menu_link_underline}></div>
+        {(location.pathname === "/menu" || location.pathname === "/deals") && (
+          <div
+            className={classes.menu_link_underline}
+            style={
+              location.pathname === "/menu"
+                ? { left: "145px" }
+                : { left: "305px" }
+            }
+          ></div>
+        )}
       </div>
 
       <div className={classes.basket_container}>
