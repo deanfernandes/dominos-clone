@@ -1,6 +1,9 @@
 import classes from "./MainNavBar.module.css";
+import { NavLink, type NavLinkRenderProps, useLocation } from "react-router";
 
 export default function MainNavBar() {
+  const location = useLocation();
+
   return (
     <nav className={classes.container}>
       <div className={classes.collection_container}>
@@ -14,24 +17,66 @@ export default function MainNavBar() {
             </svg>
           </span>
           <span>Collection</span>
-          <span className={classes.collection_location}>
-            Birmingham - Northfield
-          </span>
+          <span className={classes.collection_location}>Birkenhead</span>
         </a>
       </div>
 
       <div className={classes.menu_links_container}>
-        <a href="#" title="Main navigation links">
+        <NavLink
+          to="/menu"
+          title="Main navigation links"
+          className={({
+            isActive,
+            isPending,
+            isTransitioning,
+          }: NavLinkRenderProps) =>
+            isActive
+              ? `${classes.menu_link} ${classes.menu_link_active}`
+              : classes.menu_link
+          }
+        >
           Menu
-        </a>
-        <a href="#" title="Main navigation links">
+        </NavLink>
+        <NavLink
+          to="/deals"
+          title="Main navigation links"
+          className={({
+            isActive,
+            isPending,
+            isTransitioning,
+          }: NavLinkRenderProps) =>
+            isActive
+              ? `${classes.menu_link} ${classes.menu_link_active}`
+              : classes.menu_link
+          }
+        >
           Deals
-        </a>
-        <div className={classes.menu_link_underline}></div>
+        </NavLink>
+        {(location.pathname === "/menu" || location.pathname === "/deals") && (
+          <div
+            className={classes.menu_link_underline}
+            style={
+              location.pathname === "/menu"
+                ? { left: "145px" }
+                : { left: "305px" }
+            }
+          ></div>
+        )}
       </div>
 
       <div className={classes.basket_container}>
-        <a href="#">
+        <NavLink
+          to="/basket"
+          className={({
+            isActive,
+            isPending,
+            isTransitioning,
+          }: NavLinkRenderProps) =>
+            isActive
+              ? `${classes.basket_link} ${classes.basket_link_active}`
+              : classes.basket_link
+          }
+        >
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +92,7 @@ export default function MainNavBar() {
           </span>
           <span>Basket</span>
           <span className={classes.basket_amount}>£0.00</span>
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
