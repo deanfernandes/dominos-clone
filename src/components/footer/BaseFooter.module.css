@@ -1,0 +1,101 @@
+.base_footer_container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #006491;
+  text-transform: uppercase;
+  color: var(--primary-white);
+  font-family: "Dominos primary", "Impact", "Arial Narrow", Helvetica, Arial,
+    sans-serif;
+  padding: 0 0 3.4285714286rem;
+}
+
+.base_footer_container .about_dominos_container,
+.base_footer_container .corporate_container,
+.base_footer_container .follow_us_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.base_footer_container nav a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 1.1428571429rem;
+}
+
+.base_footer_container nav a svg {
+  width: 1.7142857143rem;
+  height: 1.7142857143rem;
+  fill: var(--primary-white);
+}
+
+.base_footer_container nav h2 {
+  padding: 3.4285714286rem 0 2.5714285714rem;
+  user-select: none;
+}
+
+.socials_container {
+  display: flex;
+  align-items: center;
+}
+
+.socials_container .socials_link svg {
+  width: 2.5714285714rem;
+  height: 2.5714285714rem;
+}
+
+.about_dominos_container_mobile,
+.corporate_container_mobile {
+  border-bottom: 0.1428571429rem solid var(--primary-white);
+}
+
+.about_dominos_container_mobile,
+.about_dominos_links_container_mobile,
+.corporate_container_mobile,
+.corporate_links_container_mobile {
+  display: none;
+  flex-direction: column;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.follow_us_container_mobile {
+  display: none;
+  justify-content: center;
+  text-transform: none;
+  font-weight: bold;
+  margin: 2.8571428571rem 0;
+}
+
+.about_dominos_header,
+.corporate_header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.follow_us_wrapper_mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .base_footer_container {
+    flex-direction: column;
+  }
+
+  .base_footer_container .about_dominos_container,
+  .base_footer_container .corporate_container,
+  .base_footer_container .follow_us_container {
+    display: none;
+  }
+
+  .about_dominos_container_mobile,
+  .about_dominos_links_container_mobile,
+  .corporate_container_mobile,
+  .corporate_links_container_mobile,
+  .follow_us_container_mobile {
+    display: flex;
+  }
+}
