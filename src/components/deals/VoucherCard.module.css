@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
+  color: var(--text-hyperlink-default);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 5px 0 rgba(57, 51, 54, 0.14),
+    0 1px 10px 0 rgba(57, 51, 54, 0.12), 0 2px 4px -1px rgba(57, 51, 54, 0.2);
+}
+
+.container button {
+  padding: 1.0714285714rem 1.6428571429rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: var(--button-surface-primary);
+  color: var(--primary-white);
+  font-size: 1.1428571429rem;
+  border-radius: 2.5rem;
+  border: none;
+  margin-bottom: 1.1428571429rem;
+}
+
+.container a {
+  text-decoration: underline;
+  color: inherit;
+  text-align: center;
+  margin-bottom: 1.1428571429rem;
+}
+
+.container:hover button {
+  background-color: rgb(56, 146, 45);
+}
+
+.container h3 {
+  text-align: center;
+  padding: 1.1428571429rem 2rem 0;
+  margin-bottom: 2.4285714286rem;
+}
+
+.container a:hover {
+  text-decoration: none;
+}
