@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 5px 0 rgba(57, 51, 54, 0.14),
+    0 1px 10px 0 rgba(57, 51, 54, 0.12), 0 2px 4px -1px rgba(57, 51, 54, 0.2);
+  background-color: var(--primary-white);
+  font-family: "Lato bold", Helvetica, Arial, sans-serif;
+  color: #393336;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.1428571429rem;
+}
+
+.sorting_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttons_container button {
+  border: 2px solid #ccc;
+  color: #393336;
+  background-color: var(--primary-white);
+  border-radius: 0.2857142857rem;
+  cursor: pointer;
+  padding: 0.7142857143rem 0.5714285714rem;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.buttons_container button svg {
+  width: 1.7142857143rem;
+  height: 1.7142857143rem;
+  fill: #393336;
+  transition: transform 0.2s;
+}
+
+.buttons_container button:hover {
+  color: #006491;
+}
+
+.buttons_container button.active {
+  color: #006491;
+  border-color: #006491;
+}
+
+.buttons_container button:hover svg {
+  fill: #006491;
+}
+
+.buttons_container button.active svg {
+  transform: scaleY(-1);
+  fill: #006491;
+}
+
+.filters_panel_buttons_container {
+  display: flex;
+  column-gap: 8px;
+}
+
+.filters_panel_container {
+  padding: 2.2857142857rem 1.1428571429rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5714285714rem;
+}
+
+.sorting_container button {
+  color: #545454;
+  fill: #545454;
+  border: 1px solid #ccc;
+  font-family: "Lato regular", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  height: 2.1428571429rem;
+  padding: 0 1.1428571429rem;
+  display: flex;
+  align-items: center;
+}
+
+.sorting_container button:hover {
+  color: #006491;
+  fill: #006491;
+}
+
+.sorting_container button svg {
+  height: 1.8571428571rem;
+  padding-right: 0.1428571429rem;
+  width: 1.8571428571rem;
+}
+
+.sorting_container button.active {
+  color: #006491;
+  fill: #006491;
+  border-color: #006491;
+}

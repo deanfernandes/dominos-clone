@@ -1,0 +1,14 @@
+.button {
+  border: 1px solid #ccc;
+  border-radius: 1.0714285714rem;
+  color: #545454;
+  cursor: pointer;
+  width: 9.7142857143rem;
+  height: 2.1428571429rem;
+  border-radius: 1.0714285714rem;
+  text-align: center;
+}
+
+.button.active {
+  border-color: #006491;
+}
