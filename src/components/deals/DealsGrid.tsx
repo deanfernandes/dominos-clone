@@ -1,5 +1,6 @@
 import type { Deal } from "../../types/Deal";
 import DealCard from "./DealCard";
+import classes from "./DealsGrid.module.css";
 
 interface DealsGridProps {
   deals: Deal[];
@@ -7,7 +8,7 @@ interface DealsGridProps {
 
 export default function DealsGrid({ deals }: DealsGridProps) {
   return (
-    <div>
+    <div className={classes.container}>
       {deals.map((d) => (
         <DealCard key={d.id} deal={d} />
       ))}

@@ -6,6 +6,7 @@
   background-color: var(--primary-white);
   font-family: "Lato bold", Helvetica, Arial, sans-serif;
   color: #393336;
+  margin-bottom: 24px;
 }
 
 .buttons_container {
@@ -17,6 +18,7 @@
 .sorting_container {
   display: flex;
   justify-content: flex-end;
+  padding: 2.2857142857rem 1.1428571429rem;
 }
 
 .buttons_container button {
@@ -96,4 +98,14 @@
   color: #006491;
   fill: #006491;
   border-color: #006491;
+}
+
+.sorting_container button:first-child {
+  border-bottom-left-radius: 1.0714285714rem;
+  border-top-left-radius: 1.0714285714rem;
+}
+
+.sorting_container button:last-child {
+  border-bottom-right-radius: 1.0714285714rem;
+  border-top-right-radius: 1.0714285714rem;
 }

@@ -1,0 +1,57 @@
+.container {
+  font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 5px 0 rgba(57, 51, 54, 0.14),
+    0 1px 10px 0 rgba(57, 51, 54, 0.12), 0 2px 4px -1px rgba(57, 51, 54, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.header_container {
+  height: 5.4285714286rem;
+  background-color: #006491;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_container img {
+  height: 100%;
+}
+
+.body_container h3 {
+  color: #006491;
+  font-size: 1.5714285714rem;
+  margin-bottom: 1.1428571429rem;
+}
+
+.body_container p {
+  color: #545454;
+}
+
+.body_container {
+  padding: 1.4285714286rem 1.1428571429rem 0;
+  flex-grow: 1;
+}
+
+.footer_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer_container button {
+  color: var(--primary-white);
+  padding: 1.4285714286rem 0.8571428571rem 1.1428571429rem 1.7142857143rem;
+  height: 4.2857142857rem;
+  min-width: 4.2857142857rem;
+  width: 4.2857142857rem;
+  background-color: #41a934;
+  border: none;
+  border-top-left-radius: 4.2857142857rem;
+  font-size: 1.7142857143rem;
+  cursor: pointer;
+}
+
+.container:hover button {
+  background-color: rgb(56, 146, 45);
+}
