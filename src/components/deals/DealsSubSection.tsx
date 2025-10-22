@@ -1,5 +1,5 @@
 import SubSectionHeader from "../SubSectionHeader";
-import FilterBar from "./FilterBar";
+import FilterBar, { type SortBy } from "./FilterBar";
 import classes from "./DealsSubSection.module.css";
 import type { Deal } from "../../types/Deal";
 import DealsGrid from "./DealsGrid";
@@ -7,6 +7,8 @@ import homeAloneImg from "../../assets/deals/home_alone.png";
 import priceSliceImg from "../../assets/deals/price_slice.png";
 import wrapImg from "../../assets/deals/wrap.png";
 import bodgofImg from "../../assets/deals/bodgof.png";
+import { useState } from "react";
+import type { MenuItemType } from "../../types/MenuItem";
 
 export const deals: Deal[] = [
   {
@@ -50,13 +52,47 @@ export const deals: Deal[] = [
 ];
 
 export default function DealsSubSection() {
+  const [selectedFilters, setSelectedFilters] = useState<MenuItemType[]>([]);
+  const [sortBy, setSortBy] = useState<SortBy>(null);
+
+  const toggleFilter = (filter: MenuItemType) => {
+    setSelectedFilters((prev) =>
+      prev.includes(filter)
+        ? prev.filter((f) => f !== filter)
+        : [...prev, filter]
+    );
+  };
+
+  const filteredDeals =
+    selectedFilters.length === 0
+      ? deals
+      : deals.filter((deal) =>
+          deal.types.some((type) => selectedFilters.includes(type))
+        );
+
+  const sortedDeals = [...filteredDeals].sort((a, b) => {
+    if (sortBy === "ascending") {
+      return a.title.localeCompare(b.title);
+    }
+    if (sortBy === "descending") {
+      return b.title.localeCompare(a.title);
+    }
+    return 0;
+  });
+
   return (
     <section className={classes.container}>
       <SubSectionHeader text="Collect Deals" />
 
-      <FilterBar />
+      <FilterBar
+        selectedFilters={selectedFilters}
+        onToggleFilter={toggleFilter}
+        numberOfDeals={filteredDeals.length}
+        sortBy={sortBy}
+        onSortChange={setSortBy}
+      />
 
-      <DealsGrid deals={deals} />
+      <DealsGrid deals={sortedDeals} />
     </section>
   );
 }

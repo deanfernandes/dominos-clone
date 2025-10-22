@@ -1,21 +1,37 @@
-import { useState } from "react";
 import classes from "./FilterBar.module.css";
 import FilterButton from "./FilterButton";
+import type { MenuItemType } from "../../types/MenuItem";
+import { useState } from "react";
 
+export type SortBy = "popularity" | "ascending" | "descending" | null;
 type ActivePanel = "filters" | "sorting" | null;
-type SortBy = "popularity" | "ascending" | "descending" | null;
 
-export default function FilterBar() {
+interface FilterBarProps {
+  selectedFilters: MenuItemType[];
+  onToggleFilter: (filter: MenuItemType) => void;
+  numberOfDeals: number;
+  sortBy: SortBy;
+  onSortChange: (sort: SortBy) => void;
+}
+
+export default function FilterBar({
+  selectedFilters,
+  onToggleFilter,
+  numberOfDeals,
+  sortBy,
+  onSortChange,
+}: FilterBarProps) {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
-  const [sortBy, setSortBy] = useState<SortBy>(null);
 
   const togglePanel = (panel: ActivePanel) => {
     setActivePanel((prev) => (prev === panel ? null : panel));
   };
 
   const handleSortClick = (sort: SortBy) => {
-    setSortBy(sort);
+    onSortChange(sort);
   };
+
+  const filterOptions: MenuItemType[] = ["pizza", "side", "dessert", "drink"];
 
   return (
     <div className={classes.container}>
@@ -30,7 +46,13 @@ export default function FilterBar() {
           </svg>
         </button>
 
-        <span>Showing all deals</span>
+        <span>
+          {numberOfDeals > 0
+            ? selectedFilters.length > 0
+              ? `Showing ${numberOfDeals} deals`
+              : "Showing all deals"
+            : "0 deals found"}
+        </span>
 
         <button
           onClick={() => togglePanel("sorting")}
@@ -53,10 +75,14 @@ export default function FilterBar() {
         <div className={classes.filters_panel_container}>
           <span>Must have</span>
           <div className={classes.filters_panel_buttons_container}>
-            <FilterButton text="Pizza" />
-            <FilterButton text="Side" />
-            <FilterButton text="Dessert" />
-            <FilterButton text="Drink" />
+            {filterOptions.map((type) => (
+              <FilterButton
+                key={type}
+                text={type}
+                active={selectedFilters.includes(type)}
+                onClick={() => onToggleFilter(type)}
+              />
+            ))}
           </div>
         </div>
       )}
