@@ -92,7 +92,10 @@ export default function DealsSubSection() {
         onSortChange={setSortBy}
       />
 
-      <DealsGrid deals={sortedDeals} />
+      <DealsGrid
+        deals={sortedDeals}
+        clearFilters={() => setSelectedFilters([])}
+      />
     </section>
   );
 }

@@ -5,3 +5,29 @@
   grid-row-gap: 1.7142857143rem;
   align-items: stretch;
 }
+
+.no_deals_container {
+  background-color: var(--primary-white);
+  box-shadow: 0 1px 1px 0 rgba(57, 51, 54, 0.14),
+    0 2px 1px -1px rgba(57, 51, 54, 0.12), 0 1px 3px 0 rgba(57, 51, 54, 0.2);
+  color: #545454;
+  padding: 4rem 0.8571428571rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dominos secondary", Helvetica, Arial, sans-serif;
+}
+
+.no_deals_container button {
+  color: #006491;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.no_deals_container h4,
+.no_deals_container span,
+.no_deals_container button {
+  margin-bottom: 1.1428571429rem;
+}
