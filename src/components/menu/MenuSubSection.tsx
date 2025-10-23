@@ -3,6 +3,7 @@ import MenuItemGrid from "./MenuItemGrid";
 import type { AnyMenuItem } from "../../types/MenuItem";
 import classes from "./MenuSubSection.module.css";
 import type { DietaryTagName } from "../../types/DietaryTagName";
+import SubSectionHeader from "../SubSectionHeader";
 
 interface MenuSubSectionProps {
   heading?: string;
@@ -17,7 +18,7 @@ export default function MenuSubSection({
 }: MenuSubSectionProps) {
   return (
     <section className={classes.container}>
-      {heading && <h3 className={classes.heading}>{heading}</h3>}
+      <SubSectionHeader text={heading} />
       <DietaryTagBar includedTags={includedTags} />
       <MenuItemGrid items={items} />
     </section>

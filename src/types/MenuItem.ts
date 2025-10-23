@@ -1,5 +1,7 @@
+export type MenuItemType = "pizza" | "side" | "dessert" | "drink";
+
 export interface MenuItem {
-  type: "pizza" | "side" | "dessert" | "drink";
+  type: MenuItemType;
   imgUrl: string;
   name: string;
   description: string;

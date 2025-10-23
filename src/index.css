@@ -11,6 +11,8 @@
   --text-primary: #393336;
   --text-secondary: #545454;
   --text-brand-red: #e31837;
+  --text-hyperlink-default: #006491;
+  --button-surface-primary: #41a934;
 }
 
 html {
