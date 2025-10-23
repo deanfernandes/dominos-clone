@@ -6,4 +6,5 @@ export type Deal = {
   title: string;
   description: string;
   types: MenuItemType[];
+  popularity: number;
 };

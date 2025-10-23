@@ -17,6 +17,7 @@ export const deals: Deal[] = [
     title: "2 Large Pizzas £26",
     description: "2 Large Pizzas for £26. T&Cs apply.",
     types: ["pizza"],
+    popularity: Math.floor(Math.random() * 100) + 1,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const deals: Deal[] = [
     title: "2 Medium Pizzas £22",
     description: "2 Medium Pizzas for £22. T&Cs apply.",
     types: ["pizza"],
+    popularity: Math.floor(Math.random() * 100) + 1,
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ export const deals: Deal[] = [
     description:
       "Buy one dessert and get another free. (Excludes ice cream) Delivery and Collection. T&Cs apply.",
     types: ["dessert"],
+    popularity: Math.floor(Math.random() * 100) + 1,
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ export const deals: Deal[] = [
     description:
       "Small pizza, choice of side & a small bottle of drink from £15.99. Choose a pizza from the set menu or create your own with up to 3 toppings. T&Cs apply.",
     types: ["pizza", "side"],
+    popularity: Math.floor(Math.random() * 100) + 1,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const deals: Deal[] = [
     description:
       "Choose a hot & cheesy wrap and a portion of fries for only £6. T&Cs apply.",
     types: ["side"],
+    popularity: Math.floor(Math.random() * 100) + 1,
   },
 ];
 
@@ -71,13 +76,19 @@ export default function DealsSubSection() {
         );
 
   const sortedDeals = [...filteredDeals].sort((a, b) => {
-    if (sortBy === "ascending") {
-      return a.title.localeCompare(b.title);
+    switch (sortBy) {
+      case "ascending":
+        return a.title.localeCompare(b.title);
+
+      case "descending":
+        return b.title.localeCompare(a.title);
+
+      case "popularity":
+        return b.popularity - a.popularity;
+
+      default:
+        return 0;
     }
-    if (sortBy === "descending") {
-      return b.title.localeCompare(a.title);
-    }
-    return 0;
   });
 
   return (
