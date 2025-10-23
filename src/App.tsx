@@ -4,10 +4,12 @@ import Footer from "./components/footer/Footer";
 import { Routes, Route } from "react-router";
 import Menu from "./pages/Menu";
 import Deals from "./pages/Deals";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>
