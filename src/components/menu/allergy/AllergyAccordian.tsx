@@ -9,6 +9,7 @@ export default function AllergyAccordian() {
       <div
         className={classes.allergy_content_btn}
         onClick={() => setShowAllergyContent((prev) => !prev)}
+        data-cy="allergy-open-button"
       >
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
@@ -35,6 +36,7 @@ export default function AllergyAccordian() {
             ? `${classes.content} ${classes.content_shown}`
             : classes.content
         }
+        data-cy="allergy-content"
       >
         Our food is freshly prepared in store where equipment and utensils are
         shared, so we cannot guarantee that any product is free from allergens,
