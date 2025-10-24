@@ -12,7 +12,12 @@ export default function DietaryTag({
   onClick,
 }: DietaryTagProps) {
   return onClick ? (
-    <button title={name} className={classes.button} onClick={onClick}>
+    <button
+      title={name}
+      className={classes.button}
+      onClick={onClick}
+      data-cy={`${name.toLowerCase()}-dietary-button`}
+    >
       <img src={iconUrl} alt={`${name} icon`} />
       {name}
     </button>

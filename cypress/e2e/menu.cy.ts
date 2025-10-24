@@ -52,4 +52,29 @@ describe("menu page spec", () => {
 
     cy.get("[data-cy='allergy-content'").should("not.visible");
   });
+
+  it("pizza speciality pizzas dietary modal info, open and close", () => {
+    const dietaryButtons = [
+      { button: "vegetarian-dietary-button", name: "Vegetarian" },
+      { button: "plant-based-dietary-button", name: "Plant-Based" },
+      { button: "gluten free-dietary-button", name: "Gluten free" },
+    ];
+
+    dietaryButtons.forEach(({ button, name }) => {
+      cy.get("[data-cy='pizza-link']").click();
+      cy.get("[data-cy='header_title']").should("not.exist");
+      cy.get(
+        `[data-cy='speciality pizzas-sub-section'] [data-cy='${button}']`
+      ).click();
+      cy.get("[data-cy='header_title']").should("exist").and("be.visible");
+      cy.get("[data-cy='header_title']").should("contain.text", name);
+      cy.get("[data-cy='dietary-modal-sm-close-btn']").click();
+      cy.get("[data-cy='header_title']").should("not.exist");
+    });
+  });
+
+  it.only("check pizza extra info modal", () => {
+    cy.get("[data-cy='pizza-link']").click();
+    cy.get("[data-cy='menu-item-info-btn']").first().click();
+  });
 });

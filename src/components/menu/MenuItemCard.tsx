@@ -64,6 +64,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
                 itemDescription: item.description,
               })
             }
+            data-cy="menu-item-info-btn"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
