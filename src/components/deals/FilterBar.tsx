@@ -57,6 +57,7 @@ export default function FilterBar({
         <button
           onClick={() => togglePanel("sorting")}
           className={activePanel === "sorting" ? classes.active : ""}
+          data-cy="sorting-button"
         >
           {sortBy === "ascending"
             ? "A - Z"
@@ -101,6 +102,7 @@ export default function FilterBar({
           <button
             onClick={() => handleSortClick("ascending")}
             className={sortBy === "ascending" ? classes.active : ""}
+            data-cy="sort-asc-button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path d="M294.6 454.6L214.6 534.6C202.1 547.1 181.8 547.1 169.3 534.6L89.3 454.6C76.8 442.1 76.8 421.8 89.3 409.3C101.8 396.8 122.1 396.8 134.6 409.3L160 434.7L160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 434.7L249.4 409.3C261.9 396.8 282.2 396.8 294.7 409.3C307.2 421.8 307.2 442.1 294.7 454.6z" />
@@ -110,6 +112,7 @@ export default function FilterBar({
           <button
             onClick={() => handleSortClick("descending")}
             className={sortBy === "descending" ? classes.active : ""}
+            data-cy="sort-desc-button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <path d="M294.6 454.6L214.6 534.6C202.1 547.1 181.8 547.1 169.3 534.6L89.3 454.6C76.8 442.1 76.8 421.8 89.3 409.3C101.8 396.8 122.1 396.8 134.6 409.3L160 434.7L160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 434.7L249.4 409.3C261.9 396.8 282.2 396.8 294.7 409.3C307.2 421.8 307.2 442.1 294.7 454.6z" />
