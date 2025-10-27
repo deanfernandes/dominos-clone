@@ -82,7 +82,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         </button>
       </div>
       <div className={classes.footer}>
-        <h2>{item.name}</h2>
+        <h2 data-cy="menu-item-card-title">{item.name}</h2>
         {item.type !== "drink" && (
           <p>
             {item.calories}kcal | Serves {item.minServes}

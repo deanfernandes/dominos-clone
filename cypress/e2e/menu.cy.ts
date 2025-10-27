@@ -73,8 +73,24 @@ describe("menu page spec", () => {
     });
   });
 
-  it.only("check pizza extra info modal", () => {
+  it("check first pizza item extra info modal", () => {
     cy.get("[data-cy='pizza-link']").click();
+
+    cy.get("[data-cy='menu-item-card-title']")
+      .first()
+      .invoke("text")
+      .as("menuItemText");
+
     cy.get("[data-cy='menu-item-info-btn']").first().click();
+
+    cy.get("[data-cy='allergy-modal-item-name']")
+      .invoke("text")
+      .then((modalItemText) => {
+        cy.get("@menuItemText").then((menuItemText) => {
+          expect(menuItemText.trim()).to.eq(modalItemText.trim());
+        });
+      });
+
+    cy.get("[data-cy='allergy-modal-close-button']").first().click();
   });
 });
