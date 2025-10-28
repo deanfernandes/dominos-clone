@@ -25,7 +25,7 @@ describe("deals page", () => {
     );
   });
 
-  it.only("scroll down to deals and sort alphabetical descending order", () => {
+  it("scroll down to deals and sort alphabetical descending order", () => {
     cy.get("[data-cy='sub-section-header-collect deals']")
       .scrollIntoView()
       .should("be.visible");
@@ -46,5 +46,14 @@ describe("deals page", () => {
         expect(texts).to.deep.equal(sortedDescending);
       }
     );
+  });
+
+  it.only("scroll down to deals and filter only pizza deals", () => {
+    cy.get("[data-cy='sub-section-header-collect deals']")
+      .scrollIntoView()
+      .should("be.visible");
+
+    cy.get("[data-cy='filters-button']").click();
+    cy.get("[data-cy='filter-button-pizza']").click();
   });
 });

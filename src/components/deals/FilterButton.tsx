@@ -15,6 +15,7 @@ export default function FilterButton({
     <button
       className={`${classes.button} ${active ? classes.active : ""}`}
       onClick={onClick}
+      data-cy={`filter-button-${text.toLowerCase()}`}
     >
       {text.charAt(0).toUpperCase() + text.slice(1)}
     </button>

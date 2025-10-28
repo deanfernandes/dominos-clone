@@ -39,6 +39,7 @@ export default function FilterBar({
         <button
           onClick={() => togglePanel("filters")}
           className={activePanel === "filters" ? classes.active : ""}
+          data-cy="filters-button"
         >
           Filters
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
