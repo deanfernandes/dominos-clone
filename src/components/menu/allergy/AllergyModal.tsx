@@ -16,7 +16,7 @@ export default function AllergyModal({ data, onClose }: AllergyModalProps) {
             X
           </button>
         </div>
-        <h3>{data.itemName}</h3>
+        <h3 data-cy="allergy-modal-item-name">{data.itemName}</h3>
         <p>{data.itemDescription}</p>
         <h3>Your selected product contains the following allergens:</h3>
         <div className={classes.description_container}>
@@ -41,7 +41,11 @@ export default function AllergyModal({ data, onClose }: AllergyModalProps) {
         </div>
 
         <div className={classes.close_button_container}>
-          <button onClick={onClose} className={classes.close_button}>
+          <button
+            onClick={onClose}
+            className={classes.close_button}
+            data-cy="allergy-modal-close-button"
+          >
             Close
           </button>
         </div>

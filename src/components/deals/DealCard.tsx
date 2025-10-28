@@ -13,7 +13,7 @@ export default function DealCard({ deal }: DealCardProps) {
       </header>
 
       <div className={classes.body_container}>
-        <h3>{deal.title}</h3>
+        <h3 data-cy="deal-card-title">{deal.title}</h3>
 
         <p>{deal.description}</p>
       </div>

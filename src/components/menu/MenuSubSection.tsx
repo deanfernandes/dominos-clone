@@ -17,7 +17,10 @@ export default function MenuSubSection({
   includedTags,
 }: MenuSubSectionProps) {
   return (
-    <section className={classes.container}>
+    <section
+      className={classes.container}
+      data-cy={`${heading?.toLowerCase()}-sub-section`}
+    >
       <SubSectionHeader text={heading} />
       <DietaryTagBar includedTags={includedTags} />
       <MenuItemGrid items={items} />

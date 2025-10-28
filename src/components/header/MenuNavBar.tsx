@@ -7,6 +7,7 @@ export default function MenuNavBar() {
         href="#pizza"
         className={classes.menu_nav_bar_link}
         title="Subcategory navigation"
+        data-cy="pizza-link"
       >
         Pizza
       </a>
@@ -14,6 +15,7 @@ export default function MenuNavBar() {
         href="#sides"
         className={classes.menu_nav_bar_link}
         title="Subcategory navigation"
+        data-cy="sides-link"
       >
         Sides
       </a>
@@ -21,6 +23,7 @@ export default function MenuNavBar() {
         href="#desserts"
         className={classes.menu_nav_bar_link}
         title="Subcategory navigation"
+        data-cy="desserts-link"
       >
         Desserts
       </a>
@@ -28,6 +31,7 @@ export default function MenuNavBar() {
         href="#drinks"
         className={classes.menu_nav_bar_link}
         title="Subcategory navigation"
+        data-cy="drinks-link"
       >
         Drinks
       </a>

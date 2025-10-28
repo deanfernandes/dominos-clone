@@ -5,5 +5,12 @@ interface SubSectionHeaderProps {
 }
 
 export default function SubSectionHeader({ text }: SubSectionHeaderProps) {
-  return text ? <h3 className={classes.heading}>{text}</h3> : null;
+  return text ? (
+    <h3
+      className={classes.heading}
+      data-cy={`sub-section-header-${text.toLowerCase()}`}
+    >
+      {text}
+    </h3>
+  ) : null;
 }
