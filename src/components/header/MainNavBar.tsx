@@ -25,11 +25,7 @@ export default function MainNavBar() {
         <NavLink
           to="/menu"
           title="Main navigation links"
-          className={({
-            isActive,
-            isPending,
-            isTransitioning,
-          }: NavLinkRenderProps) =>
+          className={({ isActive }: NavLinkRenderProps) =>
             isActive
               ? `${classes.menu_link} ${classes.menu_link_active}`
               : classes.menu_link
@@ -40,11 +36,7 @@ export default function MainNavBar() {
         <NavLink
           to="/deals"
           title="Main navigation links"
-          className={({
-            isActive,
-            isPending,
-            isTransitioning,
-          }: NavLinkRenderProps) =>
+          className={({ isActive }: NavLinkRenderProps) =>
             isActive
               ? `${classes.menu_link} ${classes.menu_link_active}`
               : classes.menu_link
@@ -67,11 +59,7 @@ export default function MainNavBar() {
       <div className={classes.basket_container}>
         <NavLink
           to="/basket"
-          className={({
-            isActive,
-            isPending,
-            isTransitioning,
-          }: NavLinkRenderProps) =>
+          className={({ isActive }: NavLinkRenderProps) =>
             isActive
               ? `${classes.basket_link} ${classes.basket_link_active}`
               : classes.basket_link

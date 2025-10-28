@@ -48,7 +48,7 @@ describe("deals page", () => {
     );
   });
 
-  it.only("scroll down to deals and filter only pizza deals", () => {
+  it("scroll down to deals and filter only pizza deals", () => {
     cy.get("[data-cy='sub-section-header-collect deals']")
       .scrollIntoView()
       .should("be.visible");

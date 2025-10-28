@@ -2,7 +2,7 @@ import classes from "./DietaryModal.module.css";
 
 interface DietaryModalProps {
   title: string;
-  content: string;
+  content: React.ReactNode;
   onClose: () => void;
 }
 
